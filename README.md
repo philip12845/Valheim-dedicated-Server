@@ -5,7 +5,7 @@ all of this requires valheim dedicated server to be installed on steam so instal
 how to install valheim dedicated server:
 go to https://developer.valvesoftware.com/wiki/SteamCMD
 install relevant version for your operating system 
-then go to https://valheim.fandom.com/wiki/Valheim_Dedicated_Server and ignore all of their code
+then go to https://valheim.fandom.com/wiki/Valheim_Dedicated_Server and ignore all of their scripts
 in valheim.sh you will need the following script :
 
   #!/bin/sh 
@@ -14,7 +14,7 @@ in valheim.sh you will need the following script :
   export SteamAppID=892970
 
   echo "Starting server PRESS CTRL-C to exit"  
-  ./valheim_server.x86_64 -name "<Philip>" -port 2456 -nographics -batchmode -world "<Philip1>" -password "vKwAbtU6e22w" -public 1  
+  ./valheim_server.x86_64 -name "<Philip>" -port 2456 -nographics -batchmode -world "<Philip1>" -password "you dont need these <> for the password" -public 1  
   export LD_LIBRARY_PATH=$templdpath
 
   #notes you can find in the valheim dedicated server directory under start_server.sh that script doesnt dogshit work tho
