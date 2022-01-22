@@ -17,12 +17,10 @@ in valheim.sh you will need the following script :
   ./valheim_server.x86_64 -name "<Philip>" -port 2456 -nographics -batchmode -world "<Philip1>" -password "vKwAbtU6e22w" -public 1  
   export LD_LIBRARY_PATH=$templdpath
 
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------------
   #notes you can find in the valheim dedicated server directory under start_server.sh that script doesnt dogshit work tho
   # Tip: Make a local copy of this script to avoid it being overwritten by steam.
   # NOTE: Minimum password length is 5 characters & Password cant be in the server name.
   # NOTE: You need to make sure the ports 2456-2458 is being forwarded to your server through your local router & firewall.
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------------
   
 installupdate.sh:
   in InstallUpdate.sh you will need the following script:
