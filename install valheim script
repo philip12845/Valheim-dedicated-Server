@@ -11,7 +11,6 @@ if n:
 echo "would you like to proceed with installation? note that this script is specifically for debian systems"
 choice y/n
 echo "all commands being used are from https://developer.valvesoftware.com/wiki/SteamCMD"
-
 echo "would you like to make a root account for SteamCMD (this is more secure)"
 choice y/n
 
