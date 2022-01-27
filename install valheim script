@@ -34,10 +34,8 @@ if y:
 if n:
   echo "installing dependencies.........."
   sudo apt-get install lib32gcc1
-
 echo "successful"
 
-echo "what would you like your password to be to the valheim_server:" # make this the dots to hide it 
 echo "placing all scripts in the relevant folders"
 #enter password and append to script
   cd root/of/valheim/dedicated/server/directory/valheim.sh
