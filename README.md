@@ -1,4 +1,4 @@
-# Valheim-dedicated-server-
+# Valheim-dedicated-Server
 shell scripts for Debian based systems to start and update valheim dedicated server without opening the steam tool.
 all of this requires valheim dedicated server to be installed on steam so install that first
 
