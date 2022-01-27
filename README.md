@@ -22,8 +22,7 @@ in valheim.sh you will need the following script :
   # NOTE: Minimum password length is 5 characters & Password cant be in the server name.
   # NOTE: You need to make sure the ports 2456-2458 is being forwarded to your server through your local router & firewall.
   
-  
-installupdate.sh:
+  installupdate.sh:
   in InstallUpdate.sh you will need the following script:
   steamcmd +@sSteamCmdForcePlatformType linux +force_install_dir /path/to/server +login anonymous +app_update 896660 validate +quit #!/bin/sh
   
