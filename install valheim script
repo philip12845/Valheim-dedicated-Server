@@ -6,13 +6,13 @@ if y:
   echo "proceeding with installation"
 
 if n:
-  echo "please install valheim first make sure it is in the default directory"
-  exit
+  echo "please install valheim dedicated server first make otherwise this script may not work"
+  exit/cancel script dont exit terminal straight away
 echo "would you like to proceed with installation? note that this script is specifically for debian systems"
 choice y/n
 echo "all commands being used are from https://developer.valvesoftware.com/wiki/SteamCMD"
 
-echo "would you like to make a root account for SteamCMD this is more secure"
+echo "would you like to make a root account for SteamCMD (this is more secure)"
 choice y/n
 
 if y:
@@ -30,17 +30,17 @@ if y:
   sudo add-apt-repository multiverse
   sudo dpkg --add-architecture i386
   sudo apt update
+  echo "installing dependencies.........."
   sudo apt install lib32gcc1 steamcmd
-  echo "installing dependencies.........."
 if n:
-  sudo apt-get install lib32gcc1
   echo "installing dependencies.........."
+  sudo apt-get install lib32gcc1
 
 echo "successful"
 
-echo "what would you like your password to be to the valheim_server:"
+echo "what would you like your password to be to the valheim_server:" # make this the dots to hide it 
 echo "placing all scripts in the relevant folders"
-#enter password and change in root of directory
+#enter password and append to script
   cd root/of/valheim/dedicated/server/directory/valheim.sh
 #find a way to put this script into the valheim server directory
   #!/bin/sh export templdpath=$LD_LIBRARY_PATH
@@ -52,7 +52,7 @@ echo "placing all scripts in the relevant folders"
   export LD_LIBRARY_PATH=$templdpath
 
 cd root/of/valheim/dedicated/server/directory/InstallUpdate.sh
-  #find a way to put this script into the valheim server directory
+  #find a way to put this script into the InstallUpdate.sh file
   steamcmd +@sSteamCmdForcePlatformType linux +force_install_dir /path/to/server +login anonymous +app_update 896660 validate +quit #!/bin/sh
 
 echo "Tip: Make a local copy of this script to avoid it being overwritten by steam."
