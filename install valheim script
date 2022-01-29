@@ -1,40 +1,70 @@
 #! bin/sh
-echo "have you got valheim installed already"
 
-choice y/n
-if y:
-  echo "proceeding with installation"
+while true; do
+    read -p "have you got valheim installed already?" yn
+    case $yn in
+        [Yy]* ) echo "proceding with installation"
+        [Nn]* ) echo "please install valheim dedicated server on steam otherwise this script may not work"
+        * ) echo "Please answer y or n:";;
+    esac
+done
 
-if n:
-  echo "please install valheim dedicated server first make otherwise this script may not work"
-  exit/cancel script dont exit terminal straight away
-echo "would you like to proceed with installation? note that this script is specifically for debian systems"
-choice y/n
-echo "all commands being used are from https://developer.valvesoftware.com/wiki/SteamCMD"
-echo "would you like to make a root account for SteamCMD (this is more secure)"
-choice y/n
 
-if y:
-  useradd -m steam
-  cd /home/steam
-  sudo apt install steamcmd
 
-if n:
-  sudo apt install steamcmd
 
-echo "are you running a 64-bit system 64-bit systems require multiverse"
-choice y/n
 
-if y:
-  sudo add-apt-repository multiverse
-  sudo dpkg --add-architecture i386
-  sudo apt update
-  echo "installing dependencies.........."
-  sudo apt install lib32gcc1 steamcmd
-if n:
-  echo "installing dependencies.........."
-  sudo apt-get install lib32gcc1
-echo "successful"
+
+
+
+
+while true; do
+    read -p "have you got valheim installed already?" yn
+    case $yn in
+        [Yy]* ) echo "all commands being used are from https://developer.valvesoftware.com/wiki/SteamCMD"
+          useradd -m steam
+          cd /home/steam
+          sudo apt install steamcmd
+        [Nn]* ) echo "would you like to make a root account for SteamCMD (this is more secure)"
+            sudo apt install steamcmd
+        * ) echo "Please answer y or n:";;
+    esac
+done
+
+
+
+
+
+
+
+
+
+
+while true; do
+    read -p "are you running a 64-bit system 64-bit systems require multiverse" yn
+    case $yn in
+        [Yy]* ) echo "proceding with installation"
+           sudo add-apt-repository multiverse
+           sudo dpkg --add-architecture i386
+           sudo apt update
+           echo "installing dependencies.........."
+            sudo apt install lib32gcc1 steamcmd
+            echo "successful"
+        [Nn]* ) echo "please install valheim dedicated server on steam otherwise this script may not work"
+           echo "installing dependencies.........."
+           sudo apt-get install lib32gcc1
+           echo "successful"
+        * ) echo "Please answer y or n:";;
+    esac
+done
+
+
+
+
+
+
+
+
+
 
 echo "placing all scripts in the relevant folders"
 #enter password and append to script
