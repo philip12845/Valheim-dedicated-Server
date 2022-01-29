@@ -1,5 +1,15 @@
 #! bin/sh
 
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+
+
+
+
 while true; do
     read -p "have you got valheim installed already?" yn
     case $yn in
