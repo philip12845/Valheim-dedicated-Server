@@ -43,8 +43,11 @@ Tip:
   
   
   ~to do this you may have to stop the server and restart it for it to generate the new world file and then do this 
-  if you want to carry over a world from one computer to another i would reccomend changing the name of the world in the start_server.sh file to something that nothing else will be called on your computer like a name and then using a search command such as (sudo find / -name 'put the name here')
+  if you want to carry over a world from one computer to another i would reccomend changing the name of the world in the start_server.sh 
+  file to something that nothing else will be called on your computer like a name and then using a search command such as:
+  sudo find / -name 'put the name here'
   
+  mine was in a root directory because the Steam user is root for me 
   
   
   
