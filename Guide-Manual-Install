@@ -13,41 +13,43 @@ Note:
     the steam tool only needs to be downloaded for the game files this will not prevent you playing the game on the same account
 install steam 
 login to your account 
+# this requires you to have valheim already bought on that steam account
 go to valheim dedicated server and download it 
-right click on it to browse local files and put the scripts listed below in the correct places
+right click on it then press properties then browse local files and put the scripts listed below in the correct places
 
 
 in valheim.sh ? might be start_server.sh you will need the following script :
 
-  #!/bin/sh 
-  export templdpath=$LD_LIBRARY_PATH  
-  export LD_LIBRARY_PATH=./linux64:$LD_LIBRARY_PATH  
-  export SteamAppID=892970
+------------------------------------------------------------------------Scripts-----------------------------------------------------------------------------------------
+ 
+#!/bin/sh 
+export templdpath=$LD_LIBRARY_PATH  
+export LD_LIBRARY_PATH=./linux64:$LD_LIBRARY_PATH  
+export SteamAppID=892970
 
-  echo "Starting server PRESS CTRL-C to exit"  
-  ./valheim_server.x86_64 -name "<Philip>" -port 2456 -nographics -batchmode -world "<Philip1>" -password "you dont need these <> for the password" -public 1  
-  export LD_LIBRARY_PATH=$templdpath
-
-  #notes you can find in the valheim dedicated server directory under start_server.sh that script doesnt dogshit work tho but its useful to know the passowrd requirements and the ports needed
-  # Tip: Make a local copy of this script to avoid it being overwritten by steam.
-  # NOTE: Minimum password length is 5 characters & Password cant be in the server name.
-  # NOTE: You need to make sure the ports 2456-2458 is being forwarded to your server through your local router & firewall.
+echo "Starting server PRESS CTRL-C to exit"  
+./valheim_server.x86_64 -name "<Philip>" -port 2456 -nographics -batchmode -world "<Philip1>" -password "you dont need these <> for the password" -public 1  
+export LD_LIBRARY_PATH=$templdpath
+ 
+#notes you can find in the valheim dedicated server directory under start_server.sh that script doesnt dogshit work tho but its useful to know the passowrd requirements and the ports needed
+# Tip: Make a local copy of this script to avoid it being overwritten by steam.
+# NOTE: Minimum password length is 5 characters & Password cant be in the server name.
+# NOTE: You need to make sure the ports 2456-2458 is being forwarded to your server through your local router & firewall.
   
-  installupdate.sh:
-  in InstallUpdate.sh you will need the following script:
-  steamcmd +@sSteamCmdForcePlatformType linux +force_install_dir /path/to/server +login anonymous +app_update 896660 validate +quit #!/bin/sh
+installupdate.sh:
+in InstallUpdate.sh you will need the following script:
+steamcmd +@sSteamCmdForcePlatformType linux +force_install_dir /path/to/server +login anonymous +app_update 896660 validate +quit #!/bin/sh
   
 Tip:
+  i also reccomend installing livepatch to allow your server to upgrade without needing a restart this isnt required but is useful 
   run the InstallUpdate.sh file everytime the game updates make sure to exit your server before running this
-
-  
   
   ~to do this you may have to stop the server and restart it for it to generate the new world file and then do this 
   if you want to carry over a world from one computer to another i would reccomend changing the name of the world in the start_server.sh 
   file to something that nothing else will be called on your computer like a name and then using a search command such as:
-  sudo find / -name 'put the name here'
-  
-  mine was in a root directory because the Steam user is root for me 
+  sudo find / -name 'put the name here' 
+  #use sudo here because the steam user could be a root user 
+  mine was in a root directory because the Steam user is root
   
   
   
